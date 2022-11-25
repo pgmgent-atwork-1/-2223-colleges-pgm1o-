@@ -1,5 +1,31 @@
-.usps {
+/*
+Header
+*/
+.header {
+  padding: var(--p-4) 0;
+}
 
+.header__logo {
+
+}
+
+.header__navigation {
+  
+}
+
+/*
+Header before
+*/
+.header-before {
+  padding: var(--p-4) 0;
+}
+
+/*
+USP's
+*/
+
+.usps {
+  font-weight: 200;
 }
 
 .usps__list {
@@ -9,6 +35,8 @@
   align-items: center;
 
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .usps__list-item {
@@ -20,10 +48,17 @@
   margin-right: var(--p-4);
 }
 
+.usps__list-item:last-of-type {
+  margin-right: 0;
+}
+
 .usps__list-item > .icon-check {
   margin-right: var(--p);
 }
 
+/*
+Contact
+*/
 .contact {
   display: flex;
   flex-direction: row;
@@ -31,6 +66,17 @@
   align-items: center;
 
   list-style: none;
+
+  font-weight: 200;
+}
+
+.contact a {
+  text-decoration: none;
+  color: var(--color-green-800);
+}
+
+.contact a:hover {
+  color: var(--color-green);
 }
 
 .contact__tel,
@@ -41,4 +87,13 @@
   align-items: center;
 
   margin-right: var(--p-4);
+}
+
+.contact__tel {
+  margin-right: 0;
+}
+
+.contact__email > .icon-envelope,
+.contact__tel > .icon-tel {
+  margin-right: var(--p);
 }
