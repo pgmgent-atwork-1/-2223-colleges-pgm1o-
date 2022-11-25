@@ -1,5 +1,12 @@
 :root {
   --color-black: hsl(0, 0%, 0%);
+  --color-orange: hsl(16, 100%, 61%);
+  --color-orange-200: hsl(16, 100%, 81%);
+  --color-orange-600: hsl(16, 100%, 41%);
+  --color-green: hsl(158, 100%, 26%);
+  --color-green-200: hsl(158, 100%, 66%);
+  --color-green-800: hsl(158, 100%, 06%);
+  --color-green-600: hsl(166, 45%, 14%);
   --font-family_roboto-slab: 'Roboto Slab', serif;
   --font-family_share: 'Share', cursive;
   --p: 4px;
@@ -25,6 +32,54 @@ h6 {
   font-family: var(--font-family_share);
 }
 
-.intro {
-  padding: var(--p-10);
+h1 {
+  font-size: 3.9rem;
+  color: var(--color-green-600);
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+.text-orange {
+  color: var(--color-orange);
+}
+
+.bg-orange {
+  background-color: var(--color-orange);
+}
+
+.container-full {
+  padding: 0 var(--p-4);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--p-4);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+
 }
