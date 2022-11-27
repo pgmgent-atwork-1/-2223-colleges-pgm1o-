@@ -1,4 +1,5 @@
 :root {
+  --color-white-100: hsl(0, 0%, 100%);
   --color-black: hsl(0, 0%, 0%);
   --color-orange: hsl(16, 100%, 61%);
   --color-orange-200: hsl(16, 100%, 81%);
