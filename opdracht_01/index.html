@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/jumbotron.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/references.css">
 </head>
 <body>
     <!-- <h1 class="text-orange">The quick brown fox jumps over the lazy dog</h1>
@@ -97,5 +98,55 @@
             </div>
         </div>
     </div>
+    <main class="main">
+        <div class="container">
+            <div class="row">
+                <div class="references-list"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <form action="" method="post" id="fromContact">
+                    <fieldset>
+                        <legend class="hidden">Reden om contact te zoeken</legend>
+                        <div>
+                            <input type="radio" id="particulier" name="type" value="particulier"> 
+                            <label for="particulier">Particulier</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="bedrijf" name="type" value="bedrijf"> 
+                            <label for="bedrijf">Bedrijf/instelling</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="openbaar_bestuur" name="type" value="openbaar_bestuur"> 
+                            <label for="openbaar_bestuur">Openbaar bestuur</label>
+                        </div>
+                        <div>
+                            <label for="gender">Provincie *</label>
+                            <select name="gender" id="gender">
+                                <option value="0">Niet gekend</option>
+                                <option value="1">Man</option>
+                                <option value="2">Vrouw</option>
+                                <option value="9">Niet van toepassing</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="hidden">Persoonlijke Informatie</legend>
+                        <div>
+                            <label for="txtName">Name</label>
+                            <input type="text" name="txtName" id="txtName" placeholder="Uw volledige naam (voornaam + familienaam)">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="hidden">Bericht</legend>
+                    </fieldset>
+                    <button type="submit">Verzenden</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="data/references.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
