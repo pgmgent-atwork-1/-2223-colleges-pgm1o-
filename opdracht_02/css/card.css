@@ -1,0 +1,48 @@
+.card {
+  width: 456px;
+}
+
+.card__picture {
+  width: 100%;
+
+  border: 1px solid #f60;
+}
+
+.card__picture > img {
+  width: 100%;
+}
+
+.card__body {
+  position: relative;
+
+  background: #000;
+  color: #fff;
+
+  width: 86%;
+  padding: 24px;
+
+  box-shadow: 0px 0px 0px 0px #f60;
+  transition: all 286ms ease-out 0s;
+}
+
+.card__body:hover {
+  box-shadow: -18px 18px 0px 0px #f60;
+  transform: translateX(36px) translatey(-36px);
+}
+
+
+
+.card__body > h3 {
+  font-size: 2rem;
+}
+
+.card__body > div.card__meta {
+  font-size: 1.4rem;
+}
+
+.card__body > div.card__meta > .event__location {
+  background-color: #f60;
+  color: #000;
+
+  padding: 8px;
+}
