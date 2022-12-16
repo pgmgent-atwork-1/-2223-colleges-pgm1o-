@@ -15,7 +15,18 @@ console.log(product, color);
 const currentCategory = 'Spel, sport en recreatie';
 const EVENTS_URL = 'https://www.pgm.gent/data/gentsefeesten/events.json';
 
-const loadEventsData = async () => {
+// Cache elements
+const $eventsList = document.querySelector('.events__list');
+const $frmSearchClientSide = document.getElementById('frmSearchClientSide');
+$frmSearchClientSide.addEventListener('submit', (ev) => {
+  ev.preventDefault();
+
+  const input = ev.currentTarget.elements.txtSearchClientSide.value;
+
+  console.log(input);
+});
+
+const fetchEventsData = async () => {
   const response = await fetch(EVENTS_URL, { methode: 'GET' });
   const data = await response.json();
 
@@ -25,17 +36,31 @@ const loadEventsData = async () => {
 
   console.log(filteredData);
 
-  const matchedEvents = [];
-  for (let event of data) {
-    if (event.category.indexOf(currentCategory) > -1) {
-      matchedEvents.push(event);
-    }
-  }
-  console.log(matchedEvents);
+  $eventsList.innerHTML = renderHTMLForEvents(filteredData);
+  $eventsList.querySelectorAll('.event').forEach($elem => $elem.addEventListener('click', (ev) => {
+    const id = ev.currentTarget.dataset.id;
+    fetchEventDataById(id);
+  }));
 };
 
+const renderHTMLForEvents = (data) => {
+  return data.map((obj) => `
+  <div class="event" data-id="${obj.id}">
+    <h3>${obj.title}</h3>
+  </div>
+  `).join('');
+}
+
+const fetchEventDataById = async (id) => {
+  const response = await fetch(EVENTS_URL, { methode: 'GET' });
+  const data = await response.json();
+
+  const event = data.find(ev => ev.id === id);
+}
+
+
 const init = () => {
-  loadEventsData();
+  fetchEventsData();
 };
 
 init();
